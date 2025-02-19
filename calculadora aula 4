@@ -1,0 +1,146 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+import java.util.Scanner;
+
+
+
+
+public class Main{
+
+    public static void Retorno(){
+        do {
+            int voltar;
+            System.out.println("Deseja fazer mais um calculo?");
+            System.out.println("[0] Não [1] Sim");
+            
+            voltar = scan.nextInt();
+            
+            }while(voltar ==0 || voltar == 1);
+            
+        
+        
+    }
+
+
+	public static void main(String[] args) {
+	    
+	    Scanner scan = new Scanner(System.in);
+	    
+	    int opcao;
+	    float m =0,r=0;
+	    float n=0;
+	    
+	    do{
+	        System.out.println(" ");
+	        System.out.println("====================================");
+	        System.out.printf("\t\tMENU \n");
+    		System.out.println("[1] ADIÇÃO");
+    		System.out.println("[2] SUBTRAÇÃO");
+    		System.out.println("[3] MULTI");
+    		System.out.println("[4] DIVISÃO");		
+    		System.out.println("[0] SAIR");
+    		System.out.println("====================================");
+    		System.out.print("Escolha uma opção:");
+    		
+    		opcao = scan.nextInt();
+    		
+    		System.out.printf("A opção escolhida foi: %d \n", opcao);
+    		
+    		
+    		if (opcao > 0 && opcao < 5) {
+    		    do {
+    		        System.out.println("Escolha o primeiro número:");
+    		        if (scan.hasNextFloat()) {
+    		            m = scan.nextFloat();
+    		            break;
+    		        } else {
+    		            System.out.println("Entrada inválida! Por favor, insira um número.");
+    		            scan.next();
+    		        }
+    		    } while (true);
+    		    System.out.printf("A opção escolhida foi: %.2f\n", m);
+    		    
+    		    do {
+    		        System.out.println("Escolha o segundo número:");
+    		        if (scan.hasNextFloat()) {
+    		            n = scan.nextFloat();
+    		            break;
+    		        } else {
+    		            System.out.println("Entrada inválida! Por favor, insira um número.");
+    		            scan.next();
+    		        }
+    		    } while (true);
+    		    
+    		    System.out.printf("A opção escolhida foi: %.2f\n", n);
+    		    
+    		} else {
+    		    System.out.println("Opção inválida!");
+    		    
+    		}
+	    
+	
+	
+    		switch (opcao) {
+    		    case 1:
+    		        System.out.println("ADIÇÃO SELECIONADO");
+    		        r=m+n;
+    		        Retorno();
+    		        break;
+    		    case 2:
+    		        System.out.println("SUBTRAÇÃO SELECIONADO");
+    		        r=m-n;
+    		        break;
+    		    case 3:
+    		        System.out.println("MULTIPLICAÇÃO SELECIONADO");
+    		        r=m*n;
+    		        break;
+    	        case 4:
+    		        System.out.println("DIVISÃO SELECIONADO");
+    		        if (n == 0){
+    		            break;
+    		        }
+    		        r=m/n;
+    		        break;
+    	        case 0:
+    		        System.out.println("SAINDO....");
+    		        break;
+    		    default:
+    		        System.out.println("RESPOSTA INVALIDO");
+    		        break;
+    		}
+    		
+    	
+    		if (opcao == 4 && n == 0){
+    		    System.out.println("Divisão invalida");
+    		}else if (opcao > 0 && opcao < 5) {
+    		
+    		    System.out.printf("Resultado: %f", r);
+    		}
+	        
+	    }while (opcao != 0 || voltar == 0);
+	    
+	    scan.close();
+
+
+
+		/*  usando if em vez de switch
+		if (opcao >= 0 && opcao < 5){
+		    if (opcao == 1){
+		        System.out.println("[1] ADIÇÃO");
+		    }
+		}else {
+		    System.out.println("Resposta invalida");
+		}
+		*/
+
+
+
+
+	}
+}
