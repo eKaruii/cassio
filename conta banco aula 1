@@ -1,0 +1,55 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany;
+
+import java.util.Scanner;
+/**
+ *
+ * @author alunolab08
+ */
+public class App {
+    int opcao;
+    
+    public static void main(String [arg]) {
+        
+        Conta c = new Conta();
+        
+        Scanner scan = new Scanner(System.in);
+         
+        System.out.println("Qual o numero da conta?");
+        c.numero = scan.nextInt();
+        
+        System.out.println("Qual o nome do titular da conta?");
+        c.nome = scan.nextString();
+        
+        System.out.println("Qual o limite da conta?");
+        c.limite = scan.nextDouble();
+        
+        System.out.println("Qual o saldo da conta?");
+        c.saldo = scan.nextDouble();
+        
+        do
+        {
+            System.out.println(" ");
+	    System.out.println("====================================");
+	    System.out.printf("\t\tMENU \n");
+            System.out.println("[1] Sacar");
+            System.out.println("[2] Depossitar");		
+            System.out.println("[0] SAIR");
+            System.out.println("====================================");
+            System.out.print("Escolha uma opção:");
+            
+            opcao = scan.nextInt();
+            
+            switch(opcao)
+            {
+                case 1:
+                    c.Sacar (valor)
+            }
+        }
+        
+    }
+    
+}
